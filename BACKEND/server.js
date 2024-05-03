@@ -12,6 +12,9 @@ const app = express();
 //import routes
 const postRoutes = require('./routes/posts');
 const userRoutes = require('./routes/auth')
+const synonymsRouter = require('./routes/synonyms.js'); 
+const antonymsRouter = require('./routes/antonyms.js'); 
+
 
 //app middleware
 app.use(bodyParser.json());
@@ -19,7 +22,9 @@ app.use(cors());
 
 //app middleware
 app.use(postRoutes);
-app.use('/api/auth', userRoutes);
+app.use('/api/auth', userRoutes);            
+app.use('/synonyms', synonymsRouter);
+app.use('/antonyms', antonymsRouter);
 
 const PORT = 8070;
 const DB_URL = process.env.MONGODB_URL;

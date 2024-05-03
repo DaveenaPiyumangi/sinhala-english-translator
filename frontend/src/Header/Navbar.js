@@ -30,7 +30,7 @@ const Navbar = () => {
           <img src={logo} width="220" height="50" />
         </Link>
         {/* Toggle navigation links based on login status */}
-        {! isLoggedIn ? (
+        {!isLoggedIn ? (
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav">
               <li className="nav-item">
@@ -59,54 +59,55 @@ const Navbar = () => {
                   </div>
                 </div>
               </li>
-                <li className="nav-item">
-                  <a className="nav-link" href="/addphase" style={{ color: "#bdc1c6" }}>
-                    Notepad
-                  </a>
-                </li>
+              <li className="nav-item">
+                <a className="nav-link" href="/addphase" style={{ color: "#bdc1c6" }}>
+                  Notepad
+                </a>
+              </li>
             </ul>
           </div>
         ) : null}
         {isLoggedIn && (
           <div className="collapse navbar-collapse" id="navbarNav">
-          <ul className="navbar-nav">
-            <li className="nav-item">
-              <a className="nav-link" href="/extract-keywords" style={{ color: "#bdc1c6" }}>
-                Extract Keywords
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="/tts" style={{ color: "#bdc1c6" }}>
-                Text to Speech
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="/stt" style={{ color: "#bdc1c6" }}>
-                Speech to Text
-              </a>
-            </li>
-            <li className="nav-item">
-              <div className="dropdown">
-                <a className="nav-link" style={{ color: "#bdc1c6" }}>
-                  Find Synonyms & Antonyms
+            <ul className="navbar-nav">
+              <li className="nav-item">
+                <a className="nav-link" href="/extract-keywords" style={{ color: "#bdc1c6" }}>
+                  Extract Keywords
                 </a>
-                <div className="dropdown-content">
-                  <a href="/synonym">Synonyms</a>
-                  <a href="/antonym">Antonyms</a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="/tts" style={{ color: "#bdc1c6" }}>
+                  Text to Speech
+                </a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="/stt" style={{ color: "#bdc1c6" }}>
+                  Speech to Text
+                </a>
+              </li>
+              <li className="nav-item">
+                <div className="dropdown">
+                  <a className="nav-link" style={{ color: "#bdc1c6" }}>
+                    Find Synonyms & Antonyms
+                  </a>
+                  <div className="dropdown-content">
+                    <a href="/synonym">Synonyms</a>
+                    <a href="/antonym">Antonyms</a>
+                  </div>
                 </div>
-              </div>
-            </li>
-            <li className="nav-item">
+              </li>
+              <li className="nav-item">
                 <a className="nav-link" href="/addphase" style={{ color: "#bdc1c6" }}>
                   Notepad
                 </a>
-            </li>
+              </li>
             </ul>
-            <div style={{marginLeft:"45%"}}>
-              <button className="btn btn-secondary btn-sm" onClick={handleLogout}>LOGOUT</button>
+            <div className="ml-auto"> {/* Added ml-auto class to position the button to the right */}
+              <button className="btn btn-secondary btn-sm" onClick={handleLogout}>
+                LOGOUT
+              </button>
             </div>
           </div>
-          
         )}
       </div>
     </nav>
