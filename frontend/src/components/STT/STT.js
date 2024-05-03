@@ -49,32 +49,41 @@ export default function STT() {
       });
   };
 
+  const handleRestart = () => {
+    setTranscript("");
+    recognitionRef.current.stop();
+    setIsListening(false);
+  };
+
   return (
     <div>
       <div className="heading-1">
-              <h1 className="top-heading">
-              Speech &nbsp;
+        <h1 className="top-heading">
+          Speech &nbsp;
           <span style={{ color: "#368728", borderBottom: "2px solid #368728" }}>
             To text
           </span>
         </h1>
         
-      <textarea
-        className="input-textarea"
-        value={transcript}
-        onChange={(e) => setTranscript(e.target.value)}
-        placeholder="Type here..."
-        rows={5}
-        cols={50}
-      />
-      <br />
-      <button className="btn" onClick={handleToggleListen}>
-        {isListening ? "Stop Listening" : "Start Listening"}
-      </button>&nbsp;&nbsp;&nbsp;&nbsp;
-      <button className="btn" onClick={handleCopyText}>
-        Copy Text
-      </button>
-      <p>{transcript}</p>
+        <textarea
+          className="input-textarea"
+          value={transcript}
+          onChange={(e) => setTranscript(e.target.value)}
+          placeholder="Type here..."
+          rows={5}
+          cols={50}
+        />
+        <br />
+        <button className="btn" onClick={handleToggleListen}>
+          {isListening ? "Stop Listening" : "Start Listening"}
+        </button>&nbsp;&nbsp;&nbsp;&nbsp;
+        <button className="btn" onClick={handleCopyText}>
+          Copy Text
+        </button>&nbsp;&nbsp;&nbsp;&nbsp;
+        <button className="btn" onClick={handleRestart}>
+          Restart
+        </button>
+        <p>{transcript}</p>
       </div>
     </div>
   );
