@@ -12,6 +12,12 @@ import ViewPhase from "./components/Phasebook/ViewPhase";
 import EditPhase from "./components/Phasebook/EditPhase";
 import Login from "./components/UserLogin/Login";
 import Signup from "./components/UserLogin/Signup";
+import AddSynonyms from "./similar&opposite/AddSynonyms/AddSynonyms";
+import UpdateSynonyms from "./similar&opposite/UpdateSynonyms/UpdateSynonyms";
+import AddAntonyms from "./similar&opposite/AddAntonyms/AddAntonyms";
+import UpdateAntonyms from "./similar&opposite/UpdateAntonyms/UpdateAntonyms";
+import Synonyms from "./similar&opposite/Synonyms";
+import Antonyms from "./similar&opposite/Antonyms";
 
 function App() {
   return (
@@ -28,6 +34,12 @@ function App() {
           <Route path="/phasebook" element={<Phasebook />} />
           <Route path="/addphase" element={<AddPhase />} />
           <Route path="/editphase/:id" element={<EditPhase />} />
+          <Route path="/synonym" exact element={<Synonyms />} />
+          <Route path="/antonym" exact element={<Antonyms />} />
+          <Route path="/addSynonyms" exact element={<AddSynonyms />} />
+          <Route path="/updateSynonyms" exact element={<UpdateSynonyms />} />
+          <Route path="/addAntonyms" exact element={<AddAntonyms />} />
+          <Route path="/updateAntonyms" exact element={<UpdateAntonyms />} />
         </Routes>
       </Router>
     </div>
